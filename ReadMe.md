@@ -1,7 +1,6 @@
 # Print it
 
 ![Aperçu du site Print it](assets/images/Print-it.png)
-
 - Ce travail a été réalisé dans le cadre du projet n°5 de la formation Intégrateur Web d’OpenClassrooms.
 
 - Print it est une entreprise de services d'impression en ligne.
