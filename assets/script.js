@@ -19,7 +19,7 @@ const slides = [
 
 let indexSlides = 0; // On commence au debut page 0 , mise a zero des slides .
 
-// SÉLECTEURS (Le DOM)- On donne un nom a une constante en ciblant une classe dans le dom .
+// SÉLECTEURS (Le DOM)- On donne récupère les elements du DOM et pn tes stock dans des variables ( Ici les constantes )  .
 const imageElement = document.querySelector(".banner-img");
 const textElement = document.querySelector("#banner p");
 const dotsContainer = document.querySelector(".dots");
@@ -34,19 +34,19 @@ function updateCarousel() {
     
     // Points .
     const dots = document.querySelectorAll(".dot"); // Creation constante dot pour les points du carouselle .
-    dots.forEach(dot => dot.classList.remove("dot_selected")); // for earch pour faire une boucle et on enleve le point de la classe selectionné .
+    dots.forEach(dot => dot.classList.remove("dot_selected")); // On retire la class qui indique le dot sélectionner .
     dots[indexSlides].classList.add("dot_selected"); // On rajoute la classe selectionné sur le point actuel .
 }
 
 function createDots() { // Creation des points 
     for (let i = 0; i < slides.length; i++) { // Boucle on commence i a 0 , tant que i est plus petit que le nombre d'images et a chaque fois on augmente i de 1 .
-        let dot = document.createElement("div"); // Creations des points 
-        dot.classList.add("dot"); // Ajout des points 
+        let dot = document.createElement("div"); // Creations des points .
+        dot.classList.add("dot"); // Ajoute la class permetant le style de point .
         
-        // On ajoute le click directement à la création !
+        // On ajoute l'ecouteur du click directement à la création !
         dot.addEventListener("click", () => {
             indexSlides = i;
-            updateCarousel();
+            updateCarousel(); // La fonction qui permet de changer de slide .
         });
         
         dotsContainer.appendChild(dot); // ajoutes les points dans le conteneur dots ( html )
@@ -60,14 +60,14 @@ function init() {
     createDots(); // On crée les points au démarrage 
     
     // Flèche Gauche
-    arrowLeft.addEventListener("click", () => { // Pour qu'on clique sur la fleche gauche
+    arrowLeft.addEventListener("click", () => { // Ajout d'un écouteur d'évènement sur la fleche gauche : ici au click .
         indexSlides--; // On recule de 1 
         if (indexSlides < 0) indexSlides = slides.length - 1; // On force le compteur a aller a la derniere image , effet boucle infinie 
         updateCarousel(); // On met a jours 
     });
 
     // Flèche Droite
-    arrowRight.addEventListener("click", () => { // Pour qu'on clique sur la fleche droite
+    arrowRight.addEventListener("click", () => { // Ajout d'un écouteur d'évènement sur la fleche droite : ici au click .
         indexSlides++; // On avance de 1
         if (indexSlides >= slides.length) indexSlides = 0; // On avance Si on de passe la derniere image on retourne a la premiere
         updateCarousel(); // On met a jours
