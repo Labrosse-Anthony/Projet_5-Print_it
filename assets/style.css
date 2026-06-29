@@ -31,7 +31,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -121,8 +121,7 @@ header {
 	object-fit: cover;
 	object-position: center;
 }
-/* Code CSS en prévision de l'ajout d'un carousel pour la bannière */
-/* Gestion des fleches du carrousel */
+
 #banner .arrow {
 	position: absolute;
 }
@@ -134,7 +133,7 @@ header {
 	right: 10px;
 	cursor: pointer;
 }
-/* Gestion des points du carrousel */
+
 .dots {
 	position: absolute;
 	bottom: 40px;
@@ -153,7 +152,7 @@ header {
 .dot_selected {
 	background-color: #fff;
 }
-/* Fin du code CSS pour le carousel */
+
 #banner p {
 	font-family: 'Roboto Slab', sans-serif;
 	font-weight: 900;
